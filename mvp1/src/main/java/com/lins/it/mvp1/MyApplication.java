@@ -5,6 +5,7 @@ import android.app.Application;
 import com.lins.it.isolation_processor.httpprocessor.HttpHelper;
 import com.lins.it.isolation_processor.httpprocessor.OkHttpProcessor;
 import com.lins.it.isolation_processor.httpprocessor.VolleyProcessor;
+import com.lins.it.mvp1.common.ProjectInit;
 
 /**
  * created by ${lins}
@@ -15,5 +16,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         HttpHelper.init(new VolleyProcessor(this));
+        ProjectInit.init(this).withApiHost("http://.....").configure();
     }
 }
