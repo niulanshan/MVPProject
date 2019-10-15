@@ -2,9 +2,18 @@ package com.lins.it.isolation_processor.httpprocessor;
 
 import android.os.Handler;
 
+import com.lins.it.isolation_processor.ICallBack;
+
 import java.io.IOException;
 import java.util.Map;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 public class OkHttpProcessor implements IHttpProcessor{
@@ -28,7 +37,7 @@ public class OkHttpProcessor implements IHttpProcessor{
     }
 
     @Override
-    public void post(String url, Map<String, Object> params,final ICallback callback) {
+    public void post(String url, Map<String, Object> params,final ICallBack callback) {
         RequestBody requestBody=appendBody(params);
         Request request=new Request.Builder()
                 .url(url)

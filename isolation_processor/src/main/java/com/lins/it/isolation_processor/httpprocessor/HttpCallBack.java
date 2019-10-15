@@ -31,7 +31,7 @@ public abstract class HttpCallBack<Result> implements ICallBack {
         //ParameterizedType参数化类型，即泛型
         //getActualTypeArguments获取参数化类型的数组，泛型可能有多个
         Type[] actualTypeArguments = ((ParameterizedType) genericSuperclass).getActualTypeArguments();
-        return actualTypeArguments[0].getClass();
+        return (Class<?>)actualTypeArguments[0];
     }
 
     @Override

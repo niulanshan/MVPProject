@@ -24,7 +24,7 @@ public class HttpHelper implements IHttpProcessor {
     }
     private static IHttpProcessor mIHttpProcessor;
     //定义一个API 设置代码接口 切换框架的地方
-   private static void init(IHttpProcessor iHttpProcessor){
+   public static void init(IHttpProcessor iHttpProcessor){
        mIHttpProcessor = iHttpProcessor;
    }
     @Override
